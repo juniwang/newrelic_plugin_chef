@@ -104,4 +104,4 @@ This cookbook is under the included MIT License.
 
 ## Contact ##
 
-Contribute to this Cookbook at https://github.com/newrelic-platform/newrelic_plugins_chef. Any other feedback or support related questions can be sent to support @ newrelic.com. 
+Contribute to this Cookbook at https://github.com/wangjunbo924/newrelic_plugins_chef. Any other feedback or support related questions can be sent to support @ newrelic.com. 
