@@ -1,0 +1,36 @@
+{
+  "name": "newrelic_plugins",
+  "version": "1.0.0",
+  "description": "Installs New Relic Plugins",
+  "maintainer": "New Relic, Inc.",
+  "maintainer_email": "support@newrelic.com",
+  "license": "MIT",
+  "platforms": {
+    "debian": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "suse": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "newrelic_plugins::pivotal_agent": "Installs New Relic Pivotal Agent Plugin",
+    "newrelic_plugins::logwatcher": "Installs New Relic logwatcher Plugin"
+  }
+}

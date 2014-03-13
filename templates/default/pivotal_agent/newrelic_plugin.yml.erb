@@ -1,0 +1,78 @@
+# Please make sure to update the license_key information with the license key for your New Relic
+# account.
+#
+# This configuration file holds examples for all plugins. You only need to uncomment 
+# the lines for the product you are using.
+#
+# Example configuration is shown below. Uncomment (remove #) the needed lines for
+# your environment. 
+#
+#
+newrelic:
+  #
+  # Update with your New Relic account license key:
+  #
+  license_key: '<%= node[:newrelic][:plugin][:license] %>'
+  #
+  # Set to '1' for verbose output, remove for normal output.
+  # All output goes to stdout/stderr.
+  #
+  verbose: 0
+#
+# Agent Configuration:
+#
+agents:
+# 
+# NOTE: You must uncomment and configure the plugins you want to use. By default they are
+# all disabled.
+# 
+# Configuration for RabbitMQ
+  rabbitmq:
+    # Must enable rabbit management plugin
+    # Note: When monitoring multiple nodes you should use the real hostnames instead of localhost
+    # Uncomment the appropriate line for your version
+    # RabbitMQ Default URL version 3.0
+    management_api_url: http://<%= node[:rabbitmq][:default_user] %>:<%= node[:rabbitmq][:default_pass] %>@<%= node[:newrelic][:pivotal_agent][:rabbitmq_host] %>:<%= node[:newrelic][:pivotal_agent][:rabbitmq_port] %>
+    # RabbitMQ Default URL versions prior to 3.0
+    #management_api_url: http://guest:guest@localhost:55672
+    #
+    # Set "debug: true" to see additional debug output
+    debug: <%= node[:newrelic][:pivotal_agent][:debug] %>
+
+# Configuration for vFabric Web Server/mod_bmx
+  httpd_mod_bmx:
+    # The - allows you to define multiple servers
+    #-
+      #hostname: localhost
+      #hostport: 80
+      # Set "debug: true" to see metrics in stdout instead of sent to New Relic"
+      #debug: false
+      # Set "testrun: true" to use input from local text/html files. Only parses input once, then quits.
+      #testrun: false
+    #-
+      #hostname: www
+      #hostport: 80
+      # Set "debug: true" to see metrics in stdout instead of sent to New Relic"
+      #debug: false
+      # Set "testrun: true" to use input from local text/html files. Only parses input once, then quits.
+      #testrun: false
+
+# Configuration for Redis
+  redis:
+    # The - allows you to define multiple servers
+    #-
+      #hostname: localhost
+      #hostport: 6379
+      # Set "debug: true" to see metrics in stdout instead of sent to New Relic"
+      #debug: false
+      # Set "testrun: true" to use input from local text/html files. Only parses input once, then quits.
+      #testrun: false
+    #-
+      #hostname: localhost
+      #hostport: 6389
+      # Set "debug: true" to see metrics in stdout instead of sent to New Relic"
+      #debug: false
+      # Set "testrun: true" to use input from local text/html files. Only parses input once, then quits.
+      #testrun: false
+
+
